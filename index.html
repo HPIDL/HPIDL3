@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cours de Piano & Clavier Numérique à Charleville - La Musique à Votre Portée</title>
+    <!-- CORRECTION DÉFINITIVE : Chargement correct de Tailwind CSS pour le design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Palette de couleurs ajustée pour un thème bleu plus foncé -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B2144; /* Un bleu très foncé pour le fond de la page */
+            color: #EBF8FF; /* Texte blanc/bleu très clair */
+        }
+        .bg-primary { background-color: #0B2144; }
+        .bg-secondary { background-color: #1E3A8A; } /* Un bleu un peu plus clair pour les sections de contraste */
+        .text-accent { color: #FACC15; } /* Jaune pour l'accent, complémentaire au bleu */
+        .text-strong-accent { color: #F97316; } /* Orange vif pour la haute visibilité */
+        .text-yellow-accent { color: #FACC15; }
+        .btn-primary {
+            background-color: #FACC15; /* Bouton avec l'accent jaune pour le contraste */
+            color: #1E3A8A;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #EAB308;
+        }
+        .card {
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .card.selected {
+            border-color: #FACC15; /* Bordure de la carte sélectionnée en jaune */
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #FACC15; /* Spinner en jaune */
+            animation: spin 1s ease infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-primary">
+    
+    <!-- Header / Hero Section -->
+    <header class="bg-secondary">
+        <div class="container mx-auto px-6 py-20 text-center">
+            <!-- Nom de l'entreprise encadré et plus visible avec le logo -->
+            <div class="inline-block p-4 border-2 border-white rounded-xl shadow-lg mb-6">
+                <!-- LE LOGO EST MAINTENANT PLUS GRAND ET CARRE -->
+                <img src="https://i.postimg.cc/TYdQ5x60/logo-final.jpg" alt="Logo Home Piano I.D.L." class="inline-block h-24 w-24 mr-4">
+                <p class="inline-block text-3xl md:text-5xl font-extrabold text-white">Home Piano I.D.L.</p>
+            </div>
+            <!-- Titre encadré en orange et texte blanc -->
+            <div class="bg-accent p-4 rounded-xl shadow-lg inline-block">
+                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight">
+                    Il n'est jamais trop tard pour jouer du piano ou du clavier numérique.
+                </h1>
+            </div>
+            <p class="mt-6 text-lg text-white max-w-2xl mx-auto">
+                Lancez-vous dans une aventure musicale à votre rythme, dans le confort de votre maison à Charleville-Mézières et ses environs.
+            </p>
+            <a href="#tarifs" class="mt-8 inline-block btn-primary font-bold rounded-full py-4 px-8 text-lg">
+                Découvrir nos tarifs
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Section "Pour Qui ?" -->
+        <section id="pour-qui" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="section-title text-white">Des cours pensés pour vous</h2>
+                    <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">Ces cours sont conçus pour répondre à vos envies et lever les barrières que vous pourriez imaginer. Si vous vous reconnaissez, alors vous êtes au bon endroit.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-secondary p-8 rounded-xl shadow-sm text-white">
+                        <div class="text-5xl mb-4 text-accent">♫</div>
+                        <h3 class="text-xl font-bold mb-2">Adultes & Seniors Débutants</h3>
+                        <p class="text-gray-200">Vous avez toujours rêvé d'apprendre un instrument ? C'est le moment idéal pour commencer, sans pression et avec un accompagnement personnalisé.</p>
+                    </div>
+                    <div class="bg-secondary p-8 rounded-xl shadow-sm text-white">
+                        <div class="text-5xl mb-4 text-accent">♯</div>
+                        <h3 class="text-xl font-bold mb-2">Reprise en Douceur</h3>
+                        <p class="text-gray-200">Vous avez joué il y a quelques années ? Reprenez contact avec la musique et retrouvez le plaisir de jouer vos morceaux préférés.</p>
+                    </div>
+                    <div class="bg-secondary p-8 rounded-xl shadow-sm text-white">
+                        <div class="text-5xl mb-4 text-accent">♭</div>
+                        <h3 class="text-xl font-bold mb-2">Sans Solfège Obligatoire</h3>
+                        <p class="text-gray-200">L'apprentissage se concentre sur le plaisir de jouer. Les notions théoriques sont intégrées progressivement, selon vos besoins et vos envies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section "Comment Ça Marche ?" -->
+        <section id="comment-ca-marche" class="py-20 bg-secondary">
+            <div class="container mx-auto px-6 text-white">
+                <div class="text-center mb-12">
+                    <h2 class="section-title">La simplicité avant tout</h2>
+                    <p class="mt-4 text-lg max-w-3xl mx-auto">Nous avons simplifié le processus pour que vous puissiez vous concentrer sur l'essentiel : la musique. Voici comment se déroule votre parcours.</p>
+                </div>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-4 text-center">
+                    <div class="p-6">
+                        <div class="mx-auto h-16 w-16 flex items-center justify-center bg-white text-accent rounded-full text-2xl font-bold mb-4">1</div>
+                        <h3 class="text-xl font-semibold">À domicile</h3>
+                        <p class="mt-2">Une professeure diplômée se déplace chez vous à Charleville-Mézières et ses alentours. Pas d'instrument ? Pas de problème ! C'est un avantage unique que nous vous offrons : notre professeur(e) vient avec son propre clavier numérique pour la durée du cours. Vous n'avez pas à investir dans un instrument tout de suite et pouvez débuter en toute tranquillité.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mx-auto h-16 w-16 flex items-center justify-center bg-white text-accent rounded-full text-2xl font-bold mb-4">2</div>
+                        <h3 class="text-xl font-semibold">Convivialité</h3>
+                        <p class="mt-2">Chaque cours est un moment de partage et de bonne humeur. L'objectif est de progresser tout en se faisant plaisir.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mx-auto h-16 w-16 flex items-center justify-center bg-white text-accent rounded-full text-2xl font-bold mb-4">3</div>
+                        <h3 class="text-xl font-semibold mb-2">Tarif Avantageux<span class="text-red-500">*</span></h3>
+                        <p class="mt-2">Bénéficiez de tarifs attractifs grâce au crédit d'impôt pour les services à la personne. La musique devient plus accessible. <img src="https://i.postimg.cc/xCkwr3FC/deduction-fiscale-grand.png" alt="Logo de déduction fiscale" class="inline-block h-16 w-auto ml-1 -mt-1"></p>
+                    </div>
+                </div>
+                <div class="max-w-4xl mx-auto mt-4 text-sm text-gray-400 text-left">
+                    <p class="mt-2 text-center text-gray-400"><span class="text-red-500">*</span> sous condition d'éligibilité. Plus d'informations sur le crédit d'impôt relatif à l'emploi à domicile et les différents plafonds applicables sont disponibles sur le site : <a href="https://www.impots.gouv.fr/portail/particulier/emploi-domicile" class="text-yellow-accent underline" target="_blank">https://www.impots.gouv.fr/portail/particulier/emploi-domicile</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section "Grille tarifaire 2025-2026" -->
+        <section id="tarifs" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-white mb-8">Grille tarifaire 2025-2026</h2>
+                <div class="flex flex-col items-center">
+                    <div class="bg-secondary p-8 rounded-xl shadow-lg max-w-xl mx-auto text-center text-white mb-8">
+                        <h3 class="text-2xl font-bold mb-4">Votre Fidélité Récompensée !</h3>
+                        <ul class="list-none text-lg">
+                            <li class="mb-2">🎁 Un <span class="text-accent font-semibold">cadeau</span> est offert pour toute carte de cours achetée.</li>
+                            <li class="mb-2">✨ Carte 5 cours : Profitez de <span class="text-accent font-semibold">5 € de réduction</span>.</li>
+                            <li class="mb-2">✨ Carte 10 cours : Profitez de <span class="text-accent font-semibold">15 € de réduction</span>.</li>
+                            <li class="mb-2">✨ Carte 20 cours : Bénéficiez d'un <span class="text-accent font-semibold">cours gratuit</span>.</li>
+                        </ul>
+                    </div>
+                    <!-- MISE À JOUR DE LA GRILLE TARIFAIRE avec le nouveau lien -->
+                    <img src="https://i.postimg.cc/cLVrQXXC/grille-tarifaire-a-23.png" alt="Grille tarifaire des cours de piano" class="w-full max-w-4xl mx-auto rounded-xl shadow-lg">
+                </div>
+            </div>
+        </section>
+        
+        <!-- NOUVELLE SECTION DE PRÉCISION COMMERCIALE -->
+        <section class="py-12">
+            <div class="container mx-auto px-6 text-center">
+                <p class="text-sm text-gray-400 italic">
+                    <span class="text-accent font-semibold">Précision :</span> Le "cadeau" mentionné est un avantage commercial offert sans valeur monétaire et non substituable.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section Contact / CTA -->
+        <section id="contact" class="bg-primary py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-white">La musique vous attend !</h2>
+                <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">N'hésitez pas à vous renseigner. Contactez-nous pour toute question ou pour réserver votre premier cours. C'est sans engagement.</p>
+                <div class="mt-8">
+                    <a href="tel:0680880758" class="inline-block btn-primary font-bold rounded-full py-4 px-8 text-lg">
+                        Appelez-nous : 06 80 88 07 58
+                    </a>
+                    <a href="mailto:homepianoidl@orange.fr" class="mt-4 sm:mt-0 sm:ml-4 inline-block bg-white text-accent font-bold rounded-full py-4 px-8 text-lg border-2 border-accent hover:bg-accent hover:text-white transition-colors duration-300">
+                        Envoyez un e-mail : homepianoidl@orange.fr
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2025 Homepianoidl - Tous droits réservés.</p>
+            <p class="mt-2">Contact : 06 80 88 07 58 | E-mail : homepianoidl@orange.fr</p>
+            <p class="mt-2">Cours de piano et clavier à domicile sur Charleville-Mézières et ses environs.</p>
+            <p class="mt-2">SIRET : 382 668 978 00028 APE 8559 B</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
